@@ -101,3 +101,32 @@ int readField(FILE* fp, int fieldFlag, PERSON* outPerson){
 
     return outSizeCounter;
 }
+
+void RRNread(char* filepath, int RRN){
+    int byte_offset = RRN * REGISTER_SIZE, fseekFlag=0; // this calculates the byte_offset to find the RRNth register
+    PERSON personRegister;
+
+
+    FILE* fp = fopen(filepath, "rb"); // tries to open a binary file for read
+    if(fp == NULL){
+        printErrorFileOpening(); // print error if unsuceeded
+        //printf("Error");
+        return;
+    }
+
+    fseekFlag = fseek(fp, byte_offset, SEEK_SET); // this sets the file pointer to the desired position to read the register
+
+    if(fseek != 0){
+        printErrorSeek();
+        return;
+    }
+
+    
+    readRegister(fp, &personRegister);
+
+    printPerson(personRegister);
+
+    fclose(fp);
+
+    return ;
+}

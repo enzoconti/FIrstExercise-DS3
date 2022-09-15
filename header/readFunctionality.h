@@ -3,9 +3,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../header/global_definitions.h"
+#include "global_definitions.h"
 
 void readFile(char*);
+void RRNread(char*filepath, int RRN);
 int readRegister(FILE *fp, PERSON* outPerson);
 int readField(FILE* fp, int fieldFlag, PERSON* outPerson);
 

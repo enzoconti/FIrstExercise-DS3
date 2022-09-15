@@ -1,6 +1,0 @@
-#ifndef RRNREADFUNCTIONALITY_H
-#define RRNREADFUNCTIONALITY_H
-
-
-
-#endif
