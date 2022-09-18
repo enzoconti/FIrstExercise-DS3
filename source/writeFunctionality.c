@@ -12,7 +12,7 @@ void writeFile(char* filepath, int nRegister){
     for(int i = 0; i < nRegister; i++){
         writeRegister(fp);
     }
-    binarioNaTela(char * filepath);
+    binarioNaTela(filepath);
     fclose(fp);
 }
 
