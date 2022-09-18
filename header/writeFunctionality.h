@@ -1,5 +1,5 @@
-#ifndef READFUNCTIONALITY_H
-#define READFUNCTIONALITY_H
+#ifndef WRITEFUNCTIONALITY_H
+#define WRITEFUNCTIONALITY_H
 
 #include <stdio.h>
 #include <stdlib.h>
