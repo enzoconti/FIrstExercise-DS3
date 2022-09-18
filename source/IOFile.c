@@ -1,5 +1,6 @@
 #include "../header/IOFile.h"
 
+// this gets the filepath of a file
 char* getFilepath(){
     char* filepath;
     filepath = malloc(50 *sizeof(char));
@@ -11,6 +12,7 @@ char* getFilepath(){
     return filepath;
 }
 
+// this simply prints a person register for functionalities read and readRRN
 void printPerson(PERSON p){
     printf("Firstname: %s\n", p.FirstName);
     printf("Lastname: %s\n", p.LastName);
@@ -74,5 +76,14 @@ void binarioNaTela(char *nomeArquivoBinario) { /* Você não precisa entender o 
 	printf("%lf\n", (cs / (double) 100));
 	free(mb);
 	fclose(fs);
+}
+
+// this input is for write functionality and simply inputs 4 strings via readline and age via scanf
+void inputPerson(PERSON *p){
+    readline(p->FirstName);
+    readline(p->LastName);
+    readline(p->email);
+    readline(p->nationality);
+    scanf("%d", &p->age);
 }
 

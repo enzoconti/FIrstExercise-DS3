@@ -4,9 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "global_definitions.h"
+#include "IOFile.h"
 
 void writeFile(char*, int nRegister);
-
-void writeRegister(FILE *fp);
+void writeField(FILE *fp, PERSON*,int fieldFlag);
+void writeRegister(FILE *fp, PERSON*);
 
 #endif

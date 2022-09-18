@@ -8,14 +8,16 @@
 int main(){
     int funcao;
     int lugar;
-    char arquivo[30];
+    char *arquivo; // this will be a filepath
+    int nRegister;
 
     scanf("%d", &funcao);
-    scanf("%s", arquivo);
+    arquivo = getFilepath();
     
     switch(funcao){
         case 1: // direciona para a funcao write
-            writeFile(arquivo, funcao);
+            scanf("%d", &nRegister);
+            writeFile(arquivo, nRegister);
             break;
 
         case 2: // direciona para a funcao read
@@ -24,7 +26,7 @@ int main(){
 
         case 3: // direciona para a funcao readRRN
             scanf("%d", &lugar);
-            RRNread(arquivo, lugar);
+            RRNread(arquivo, lugar); // "lugar" means the RRN index
             break;
     }	
 }

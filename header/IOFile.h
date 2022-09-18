@@ -12,6 +12,7 @@ void printErrorFileOpening();
 void printErrorSeek();
 void readline(char* string);
 void binarioNaTela(char *nomeArquivoBinario);
+void inputPerson(PERSON *p);
 //int writeRegister(PERSON pp);
 
 #endif
