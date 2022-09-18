@@ -122,7 +122,7 @@ void RRNread(char* filepath, int RRN){
 
     fseekFlag = fseek(fp, byte_offset, SEEK_SET); // this sets the file pointer to the desired position to read the register
 
-    if(fseek != 0){
+    if(fseekFlag != 0){
         printErrorSeek();
         return;
     }
