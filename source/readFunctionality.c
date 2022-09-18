@@ -27,37 +27,43 @@ void readFile(char* filepath){
 }
 
 // this will read an entire register and put it into the outPerson instance
+// isso lerá um registro inteiro e o colocará na instância outPerson
 int readRegister(FILE *fp, PERSON* outPerson){
 
     //printf("readRegister has been called\n");
 
     int countFieldsSize = 0, buff=0, fieldFlag = 0; // the fieldFlag indicates which f the 5 possible fields we are reading - to know its size and where to put it onto PERSON struct
+    //o fieldFlag indica quais dos 5 campos possíveis estamos lendo - para saber seu tamanho e onde colocá-lo na estrutura PERSON
 
     while(countFieldsSize < REGISTER_SIZE){
         //printf("starting the readRegister loop with countFieldsSize=%d and fielFlag=%d\n", countFieldsSize, fieldFlag);
         buff = readField(fp, fieldFlag, outPerson);
 
         if(buff == 0){ // this indicates the file has ended
+            //isso indica que o arquivo terminou
             return 0;
         }else{
             countFieldsSize+=buff; // we accumulate the non-zero buffer to know how much of the register we have already read
-        }
+        }//acumulamos o buffer diferente de zero para saber quanto do registrador já lemos
 
         fieldFlag = (fieldFlag + 1)%5; // this makes the fieldFlag loop through 0 -> 1 -> 2 -> 3 -> 4 -> 0 ...
+        //isso faz com que o fieldFlag passe por 0 -> 1 -> 2 -> 3 -> 4 -> 0 ...
         //printf("leaving the readRegister loop with countFieldsSize=%d and fieldFlag=%d\n", countFieldsSize, fieldFlag);
     }
 
     return 1; // if the register has ended and the file still not, we return 1 to indicate to readFile that it can read another register
+    //se o registro terminou e o arquivo ainda não, retornamos 1 para indicar ao readFile que ele pode ler outro registro
 }
 
 // this function will read one of the 5 possible fields according to the fieldFlag and puts it onto a field of outPerson
+//esta função lerá um dos 5 campos possíveis de acordo com o fieldFlag e o colocará em um campo de outPerson
 int readField(FILE* fp, int fieldFlag, PERSON* outPerson){
 
     //printf("\n\nreadField has been called with fieldFlag:%d\n", fieldFlag);
     
     int outSizeCounter=0;
     int nullFlag=1; // this flag will indicate when fread fails(meaning the file has ended)
-
+//este sinalizador indicará quando o fread falhar (o que significa que o arquivo foi encerrado)
     switch(fieldFlag){
         case 0: // FirstName field
             //printf("switch case has entered case 0\n");

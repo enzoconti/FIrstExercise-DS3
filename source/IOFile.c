@@ -76,36 +76,3 @@ void binarioNaTela(char *nomeArquivoBinario) { /* Você não precisa entender o 
 	fclose(fs);
 }
 
-int writeRegister(PERSON pp){
-	int i;
-	i = 0;
-	while(pp.FirstName[i] != '\n'){
-		scanf("%s", &pp.FirstName[i]);
-		i++;		
-	}
-
-	i = 0;
-	while(pp.LastName[i] != '\n'){
-		scanf("%s", &pp.LastName[i]);
-		i++;		
-	}
-	
-	i = 0;
-	while(pp.email[i] != '\n'){
-		scanf("%s", &pp.email[i]);
-		i++;		
-	}
-	
-	i = 0;
-	while(pp.nationality[i] != '\n'){
-		scanf("%s", &pp.nationality[i]);
-		i++;		
-	}
-
-	scanf("%d", &pp.age);
-
-	if(pp.FirstName == "\n"){
-        return 1;
-    }
-    return 0;
-}
