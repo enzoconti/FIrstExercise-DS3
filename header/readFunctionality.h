@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "global_definitions.h"
-#include "IOFile.h"
 
 void readFile(char*);
 void RRNread(char*filepath, int RRN);

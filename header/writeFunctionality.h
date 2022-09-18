@@ -5,5 +5,8 @@
 #include <stdlib.h>
 #include "global_definitions.h"
 
-void writeFile(char*);
+void writeFile(char*, int nRegister);
+
+void writeRegister(FILE *fp);
+
 #endif
