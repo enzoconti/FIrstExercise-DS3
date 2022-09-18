@@ -23,7 +23,7 @@ int main(){
             break;
 
         case 3: // direciona para a funcao readRRN
-            scanf("%d", &lugar)
+            scanf("%d", &lugar);
             RRNread(arquivo, lugar);
             break;
     }	
